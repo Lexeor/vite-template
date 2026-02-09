@@ -1,0 +1,42 @@
+@import "modern-normalize";
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-primary-50: #ebfef8;
+  --color-primary-100: #ccfdf0;
+  --color-primary-200: #9dfade;
+  --color-primary-300: #6cf4cc;
+  --color-primary-400: #46eab7;
+  --color-primary-500: #53f6c7;
+  --color-primary-600: #1cc699;
+  --color-primary-700: #1a9e7d;
+  --color-primary-800: #1a7d65;
+  --color-primary-900: #196754;
+  --color-primary-950: #083c31;
+
+  /* Layout */
+  --color-background: #0f172a;
+  --color-foreground: #f8fafc;
+
+  /* Secondary */
+  --color-secondary-500: #0079d1;
+
+  /* Brand Constants */
+  --color-brand: var(--color-primary-500);
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
