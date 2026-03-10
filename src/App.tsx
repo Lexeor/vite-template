@@ -1,12 +1,27 @@
+import Header from '@/components/Header.tsx';
+import Hero from '@/components/Hero.tsx';
+import About from '@/components/sections/About.tsx';
+import Services from '@/components/sections/Services.tsx';
+import Directions from '@/components/sections/Directions.tsx';
+import HowItWorks from '@/components/sections/HowItWorks.tsx';
+import Contact from '@/components/sections/Contact.tsx';
+import Footer from '@/components/sections/Footer.tsx';
+
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background text-foreground">
-      <p className="text-foreground text-lg md:text-xl leading-relaxed text-center font-medium">
-        TypeScript, Tailwind CSS 4, Framer Motion, and Lucide Icons.<br />
-        <span className="text-primary-500 text-5xl">Ready to go.</span>
-      </p>
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Directions />
+        <HowItWorks />
+        <Contact />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
