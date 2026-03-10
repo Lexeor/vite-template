@@ -2,36 +2,35 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary */
-  --color-primary-50: #ebfef8;
-  --color-primary-100: #ccfdf0;
-  --color-primary-200: #9dfade;
-  --color-primary-300: #6cf4cc;
-  --color-primary-400: #46eab7;
-  --color-primary-500: #53f6c7;
-  --color-primary-600: #1cc699;
-  --color-primary-700: #1a9e7d;
-  --color-primary-800: #1a7d65;
-  --color-primary-900: #196754;
-  --color-primary-950: #083c31;
+  /* Primary — cozy forest green */
+  --color-primary-50:  #eef6e8;
+  --color-primary-100: #d4eccb;
+  --color-primary-200: #acd99a;
+  --color-primary-300: #7dc063;
+  --color-primary-400: #5faa45;
+  --color-primary-500: #6b9b5c;
+  --color-primary-600: #527848;
+  --color-primary-700: #3f5f38;
+  --color-primary-800: #334d2d;
+  --color-primary-900: #2b4026;
+  --color-primary-950: #152212;
 
   /* Layout */
-  --color-background: #f8fafc;
-  --color-foreground: #0f172a;
+  --color-background: #f5f8f2;
+  --color-foreground: #1c2918;
 
-  /* Secondary */
-  --color-secondary-500: #0079d1;
-
-  /* Brand Constants */
+  /* Brand shortcut */
   --color-brand: var(--color-primary-500);
+
+  --font-caveat: Caveat, sans-serif;
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: light;
   background-color: var(--color-background);
   color: var(--color-foreground);
 
@@ -63,22 +62,37 @@
   pointer-events: none;
 }
 
-input {
-  outline: 0;
-  color: #1b5980;
-  font-size: 12px;
+/* OverlayScrollbars — smooth scroll on viewport */
+[data-overlayscrollbars-viewport] {
+  scroll-behavior: smooth;
 }
 
-input:focus {
-  border-color: #1b5980;
+/* OverlayScrollbars — primary color theme */
+.os-theme-dark {
+  --os-handle-bg: #8dc640cc;
+  --os-handle-bg-hover: #8dc640ee;
+  --os-handle-bg-active: #6fa130ff;
+  --os-track-bg: transparent;
+  --os-track-bg-hover: #8dc64011;
+  --os-track-bg-active: #8dc64018;
+  --os-handle-border-radius: 4px;
+  --os-track-border-radius: 4px;
+  --os-size: 10px;
+  --os-handle-transition: opacity 0.15s, background-color 0.15s;
+}
+
+input, textarea, select {
+  outline: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--color-foreground);
 }
 
 button {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   color: var(--color-foreground);
+}
+
+.caveat {
+  font-family: Caveat, sans-serif;
 }
