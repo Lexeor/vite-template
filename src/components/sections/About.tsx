@@ -1,6 +1,6 @@
 import H2 from '@/components/Typography/H2.tsx';
 import SectionLabel from '@/components/Typography/SectionLabel.tsx';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { AwardIcon, GlobeIcon, TrendingUpIcon, UsersIcon, ZapIcon } from 'lucide-react';
 import type { FC, ReactNode } from 'react';
 

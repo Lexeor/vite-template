@@ -27,8 +27,8 @@ export default function TeamPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background pt-24 pb-16">
-      <div className="max-w-[1280px] mx-auto px-4">
+    <div className="min-h-screen bg-background pt-23 pb-16">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-0">
 
         {/* Header panel */}
         <div className="bg-surface p-4 grid grid-cols-1 md:grid-cols-2 min-h-64 mb-4 rounded-xl">

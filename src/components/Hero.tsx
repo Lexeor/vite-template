@@ -1,5 +1,5 @@
 import Button from '@/components/ui/Button.tsx';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { ArrowUpRightIcon, ChevronRightIcon } from 'lucide-react';
 import type { FC } from 'react';
 
