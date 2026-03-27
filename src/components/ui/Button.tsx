@@ -31,7 +31,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
   const v = VARIANTS[variant];
 
   const base = cn(
-    'relative inline-flex items-center gap-2 overflow-hidden rounded-xl px-6 py-3.5',
+    'relative inline-flex items-center gap-2 overflow-hidden rounded-md px-6 py-3.5',
     'grainy',
     'text-sm font-semibold',
     'transition-colors duration-150',
@@ -41,10 +41,6 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
 
   const content = (
     <>
-      <span
-        className={cn('pointer-events-none absolute inset-[3px] rounded-lg border border-dashed', v.stitch)}
-        aria-hidden
-      />
       <span className="relative z-10 flex items-center gap-2">
         {children}
       </span>
