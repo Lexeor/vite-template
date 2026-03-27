@@ -25,6 +25,9 @@
   /* Brand shortcut */
   --color-brand: var(--color-primary-500);
 
+  /* Shadows */
+  --shadow-header: 0 4px 25px 0 rgba(0, 0, 0, .078);
+
   --font-caveat: Caveat, sans-serif;
 }
 
@@ -95,6 +98,8 @@
   button {
     cursor: pointer;
     color: var(--color-foreground);
+    font-size: inherit;
+    font-family: inherit;
   }
 }
 
