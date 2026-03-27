@@ -2,22 +2,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary — cozy forest green */
-  --color-primary-50:  #eef6e8;
-  --color-primary-100: #d4eccb;
-  --color-primary-200: #acd99a;
-  --color-primary-300: #7dc063;
-  --color-primary-400: #5faa45;
-  --color-primary-500: #6b9b5c;
-  --color-primary-600: #527848;
-  --color-primary-700: #3f5f38;
-  --color-primary-800: #334d2d;
-  --color-primary-900: #2b4026;
-  --color-primary-950: #152212;
+  /* Primary — bright red */
+  --color-primary-50: #fff0f0;
+  --color-primary-100: #ffd9d9;
+  --color-primary-200: #ffb3b3;
+  --color-primary-300: #ff7070;
+  --color-primary-400: #f54040;
+  --color-primary-500: #e61e1e;
+  --color-primary-600: #c41818;
+  --color-primary-700: #9e1212;
+  --color-primary-800: #800e0e;
+  --color-primary-900: #660b0b;
+  --color-primary-950: #3a0505;
 
-  /* Layout */
-  --color-background: #f5f8f2;
-  --color-foreground: #1c2918;
+  /* Layout — light */
+  --color-background: #f5f5f5;
+  --color-foreground: #111114;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ededf2;
+  --color-border: #e2e2ea;
 
   /* Brand shortcut */
   --color-brand: var(--color-primary-500);
@@ -69,28 +72,30 @@
 
 /* OverlayScrollbars — primary color theme */
 .os-theme-dark {
-  --os-handle-bg: #8dc640cc;
-  --os-handle-bg-hover: #8dc640ee;
-  --os-handle-bg-active: #6fa130ff;
+  --os-handle-bg: #e61e1ecc;
+  --os-handle-bg-hover: #e61e1eee;
+  --os-handle-bg-active: #c41818ff;
   --os-track-bg: transparent;
-  --os-track-bg-hover: #8dc64011;
-  --os-track-bg-active: #8dc64018;
+  --os-track-bg-hover: #e61e1e11;
+  --os-track-bg-active: #e61e1e18;
   --os-handle-border-radius: 4px;
   --os-track-border-radius: 4px;
   --os-size: 10px;
   --os-handle-transition: opacity 0.15s, background-color 0.15s;
 }
 
-input, textarea, select {
-  outline: 0;
-  font-family: inherit;
-  font-size: inherit;
-  color: var(--color-foreground);
-}
+@layer base {
+  input, textarea, select {
+    outline: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--color-foreground);
+  }
 
-button {
-  cursor: pointer;
-  color: var(--color-foreground);
+  button {
+    cursor: pointer;
+    color: var(--color-foreground);
+  }
 }
 
 .caveat {
