@@ -20,7 +20,7 @@ interface SiteSection {
 }
 
 const API = 'http://localhost:8000/api';
-const CONTAINER = 'max-w-[1280px] mx-auto px-4 sm:px-8';
+const CONTAINER = 'max-w-[1280px] mx-auto px-4';
 
 export default function TeamPage() {
   const [employees, setEmployees] = useState<Employee[]>([]);

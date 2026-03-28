@@ -97,16 +97,16 @@ export default function StaffForm() {
         </h2>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-background rounded-xl border border-border p-6 space-y-4">
+      <form onSubmit={handleSubmit} className="bg-background rounded-xl p-6 space-y-4">
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3">{error}</div>
+          <div className="bg-red-50 text-red-700 text-sm rounded-lg px-4 py-3">{error}</div>
         )}
 
         {/* Photo upload */}
         <Field label="Фотография">
           <div className="flex items-center gap-4">
             {/* Preview */}
-            <div className="w-20 h-20 rounded-xl overflow-hidden bg-surface flex-shrink-0 border border-border">
+            <div className="w-20 h-20 rounded-xl overflow-hidden bg-surface flex-shrink-0">
               {preview ? (
                 <img src={preview} alt="Превью" className="w-full h-full object-cover object-top" />
               ) : (
@@ -123,7 +123,7 @@ export default function StaffForm() {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="px-3 py-1.5 text-xs font-medium border border-border rounded-lg text-foreground/70 hover:bg-surface transition-colors"
+                className="px-3 py-1.5 text-xs font-medium bg-surface rounded-lg text-foreground/70 hover:bg-surface-elevated transition-colors"
               >
                 {preview ? 'Заменить' : 'Загрузить фото'}
               </button>
@@ -131,7 +131,7 @@ export default function StaffForm() {
                 <button
                   type="button"
                   onClick={handleRemovePhoto}
-                  className="px-3 py-1.5 text-xs font-medium text-red-600 border border-red-200 rounded-lg hover:bg-red-50 transition-colors"
+                  className="px-3 py-1.5 text-xs font-medium text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors"
                 >
                   Удалить фото
                 </button>
@@ -187,7 +187,7 @@ export default function StaffForm() {
   );
 }
 
-const inputCls = 'w-full px-3 py-2.5 rounded-lg border border-border bg-surface text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition';
+const inputCls = 'w-full px-3 py-2.5 rounded-lg bg-surface text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 transition';
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (

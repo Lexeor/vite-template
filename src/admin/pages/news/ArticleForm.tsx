@@ -75,9 +75,9 @@ export default function ArticleForm() {
         </h2>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-background rounded-xl border border-border p-6 space-y-4">
+      <form onSubmit={handleSubmit} className="bg-background rounded-xl p-6 space-y-4">
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3">{error}</div>
+          <div className="bg-red-50 text-red-700 text-sm rounded-lg px-4 py-3">{error}</div>
         )}
 
         <Field label="Заголовок">
@@ -124,7 +124,7 @@ export default function ArticleForm() {
   );
 }
 
-const inputCls = 'w-full px-3 py-2.5 rounded-lg border border-border bg-surface text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition';
+const inputCls = 'w-full px-3 py-2.5 rounded-lg bg-surface text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 transition';
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (

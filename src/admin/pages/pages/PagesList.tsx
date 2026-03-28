@@ -37,10 +37,10 @@ export default function PagesList() {
       ) : pages.length === 0 ? (
         <div className="text-center py-16 text-foreground/50">Страниц пока нет</div>
       ) : (
-        <div className="bg-background rounded-xl border border-border overflow-hidden">
+        <div className="bg-background rounded-xl overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-border bg-surface">
+              <tr className="bg-surface-elevated">
                 <th className="text-left px-4 py-3 font-medium text-foreground/60">Заголовок</th>
                 <th className="text-left px-4 py-3 font-medium text-foreground/60">Slug</th>
                 <th className="text-left px-4 py-3 font-medium text-foreground/60">Порядок</th>
@@ -48,7 +48,7 @@ export default function PagesList() {
                 <th className="px-4 py-3" />
               </tr>
             </thead>
-            <tbody className="divide-y divide-border">
+            <tbody>
               {pages.map(page => (
                 <tr key={page.id} className="hover:bg-surface transition-colors">
                   <td className="px-4 py-3 font-medium text-foreground">{page.title}</td>
@@ -57,8 +57,8 @@ export default function PagesList() {
                   <td className="px-4 py-3">
                     <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                       page.is_published
-                        ? 'bg-green-50 text-green-700 border border-green-200'
-                        : 'bg-yellow-50 text-yellow-700 border border-yellow-200'
+                        ? 'bg-green-50 text-green-700'
+                        : 'bg-yellow-50 text-yellow-700'
                     }`}>
                       {page.is_published ? 'Опубликована' : 'Черновик'}
                     </span>
@@ -66,13 +66,13 @@ export default function PagesList() {
                   <td className="px-4 py-3 flex justify-end gap-2">
                     <Link
                       to={`/admin/pages/${page.slug}/edit`}
-                      className="px-3 py-1 text-xs font-medium text-foreground/60 border border-border rounded-md hover:bg-surface transition-colors"
+                      className="px-3 py-1 text-xs font-medium text-foreground/60 bg-surface rounded-md hover:bg-surface-elevated transition-colors"
                     >
                       Редактировать
                     </Link>
                     <button
                       onClick={() => handleDelete(page.slug)}
-                      className="px-3 py-1 text-xs font-medium text-red-600 border border-red-200 rounded-md hover:bg-red-50 transition-colors"
+                      className="px-3 py-1 text-xs font-medium text-red-600 bg-red-50 rounded-md hover:bg-red-100 transition-colors"
                     >
                       Удалить
                     </button>

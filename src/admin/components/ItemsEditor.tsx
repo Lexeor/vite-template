@@ -85,7 +85,7 @@ function ItemCard({ item, index, total, endpoint, onMoveUp, onMoveDown, onRemove
   }
 
   return (
-    <div className="bg-background rounded-xl border border-border overflow-hidden">
+    <div className="bg-background rounded-xl overflow-hidden">
       {/* Header row — clickable to expand */}
       <button
         type="button"
@@ -145,7 +145,7 @@ function ItemCard({ item, index, total, endpoint, onMoveUp, onMoveDown, onRemove
           {/* Image */}
           <div className="flex items-start gap-4">
             <div
-              className="w-20 h-20 rounded-lg bg-surface border border-border flex-shrink-0 overflow-hidden flex items-center justify-center cursor-pointer"
+              className="w-20 h-20 rounded-lg bg-surface flex-shrink-0 overflow-hidden flex items-center justify-center cursor-pointer"
               onClick={() => fileRef.current?.click()}
             >
               {item.image
@@ -187,7 +187,7 @@ function ItemCard({ item, index, total, endpoint, onMoveUp, onMoveDown, onRemove
             value={item.title}
             onChange={e => onChange({ title: e.target.value })}
             placeholder="Заголовок..."
-            className="w-full px-3 py-2 bg-surface border border-border rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:border-primary-500 transition-colors"
+            className="w-full px-3 py-2 bg-surface rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
           />
 
           {/* Body */}
@@ -196,7 +196,7 @@ function ItemCard({ item, index, total, endpoint, onMoveUp, onMoveDown, onRemove
             onChange={e => onChange({ body: e.target.value })}
             placeholder="Описание (двойной перевод строки = новый абзац)..."
             rows={5}
-            className="w-full px-3 py-2 bg-surface border border-border rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:border-primary-500 transition-colors resize-none"
+            className="w-full px-3 py-2 bg-surface rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors resize-none"
           />
 
           {/* Actions */}

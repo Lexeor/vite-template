@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { apiFetch } from '../../api/client';
-import HeroBlockEditor from '../../components/HeroBlockEditor';
+import SectionEditor from '../../components/SectionEditor';
 
 interface Product {
   id: number;
@@ -282,7 +282,7 @@ export default function ClientsConfig() {
 
   return (
     <div className="space-y-6">
-      <HeroBlockEditor slug="clients" titleLabel="Заголовок страницы" bodyLabel="Подзаголовок / описание" />
+      <SectionEditor slug="clients" label="Страница «Клиенты»" titleLabel="Заголовок страницы" bodyLabel="Подзаголовок / описание" />
 
       <div className="space-y-2 mb-3">
         {clients.map((client, index) => (

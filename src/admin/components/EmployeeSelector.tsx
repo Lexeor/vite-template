@@ -60,7 +60,7 @@ export default function EmployeeSelector({
             <div className="space-y-2">
               {selected.map((emp, index) => (
                 <div key={emp.id}
-                     className="flex items-center gap-3 bg-background rounded-xl border border-border px-3 py-2.5">
+                     className="flex items-center gap-3 bg-background rounded-xl px-3 py-2.5">
                   <div className="w-8 h-8 rounded-lg bg-surface flex-shrink-0 overflow-hidden">
                     {emp.photo
                       ? <img src={emp.photo} alt={emp.name} className="w-full h-full object-cover" />
@@ -128,7 +128,7 @@ export default function EmployeeSelector({
             <div className="space-y-2">
               {available.map(emp => (
                 <div key={emp.id}
-                     className="flex items-center gap-3 bg-background rounded-xl border border-border px-3 py-2.5">
+                     className="flex items-center gap-3 bg-background rounded-xl px-3 py-2.5">
                   <div className="w-8 h-8 rounded-lg bg-surface flex-shrink-0 overflow-hidden">
                     {emp.photo
                       ? <img src={emp.photo} alt={emp.name} className="w-full h-full object-cover" />

@@ -8,21 +8,23 @@ interface SiteSection {
   body: string;
 }
 
-interface HeroBlockEditorProps {
+interface SectionEditorProps {
   slug: string;
+  label?: string;
   withEyebrow?: boolean;
   eyebrowLabel?: string;
   titleLabel?: string;
   bodyLabel?: string;
 }
 
-export default function HeroBlockEditor({
+export default function SectionEditor({
   slug,
+  label = 'Блок страницы',
   withEyebrow = false,
   eyebrowLabel = 'Надпись над заголовком',
   titleLabel = 'Заголовок',
   bodyLabel = 'Описание',
-}: HeroBlockEditorProps) {
+}: SectionEditorProps) {
   const [eyebrow, setEyebrow] = useState('');
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
@@ -56,10 +58,10 @@ export default function HeroBlockEditor({
   if (loading) return null;
 
   return (
-    <div className="bg-background rounded-xl border border-border p-5 mb-6">
+    <div className="bg-background rounded-xl p-5 mb-6">
       <div className="flex items-center justify-between mb-4">
         <p className="text-xs font-semibold text-foreground/40 uppercase tracking-widest">
-          Блок-панель страницы
+          {label}
         </p>
         <button
           onClick={save}
@@ -80,7 +82,7 @@ export default function HeroBlockEditor({
               type="text"
               value={eyebrow}
               onChange={e => setEyebrow(e.target.value)}
-              className="w-full px-3 py-2 bg-surface border border-border rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:border-primary-500 transition-colors"
+              className="w-full px-3 py-2 bg-surface rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
               placeholder="НАШИ ПРИНЦИПЫ"
             />
           </div>
@@ -94,7 +96,7 @@ export default function HeroBlockEditor({
             type="text"
             value={title}
             onChange={e => setTitle(e.target.value)}
-            className="w-full px-3 py-2 bg-surface border border-border rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:border-primary-500 transition-colors"
+            className="w-full px-3 py-2 bg-surface rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
             placeholder="Заголовок..."
           />
         </div>
@@ -107,7 +109,7 @@ export default function HeroBlockEditor({
             value={body}
             onChange={e => setBody(e.target.value)}
             rows={3}
-            className="w-full px-3 py-2 bg-surface border border-border rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:border-primary-500 transition-colors resize-none"
+            className="w-full px-3 py-2 bg-surface rounded-lg text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors resize-none"
             placeholder="Текст..."
           />
         </div>

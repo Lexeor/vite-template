@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { apiFetch } from '../../api/client';
 import EmployeeSelector from '../../components/EmployeeSelector';
-import HeroBlockEditor from '../../components/HeroBlockEditor';
+import SectionEditor from '../../components/SectionEditor';
 import ItemsEditor from '../../components/ItemsEditor';
 import type { Employee, TeamMember } from '../../types';
 
@@ -58,7 +58,7 @@ export default function TeamConfig() {
 
   return (
     <div className="space-y-8">
-      <HeroBlockEditor slug="team" />
+      <SectionEditor slug="team" label="Страница «Команда»" />
 
       <div>
         <div className="flex items-center justify-between mb-6">
@@ -80,7 +80,7 @@ export default function TeamConfig() {
         />
       </div>
 
-      <HeroBlockEditor slug="team-about" withEyebrow titleLabel="Заголовок секции" bodyLabel="Подзаголовок" />
+      <SectionEditor slug="team-about" label="Секция «О команде»" withEyebrow titleLabel="Заголовок секции" bodyLabel="Подзаголовок" />
 
       <div>
         <h2 className="text-xl font-semibold text-foreground mb-4">Принципы</h2>

@@ -19,7 +19,7 @@ function NavGroupItem({ item }: { item: NavGroup }) {
         {item.icon}
         {item.label}
       </div>
-      <div className="ml-6 border-l border-background/10 pl-3 space-y-0.5">
+      <div className="ml-6 pl-3 space-y-0.5">
         {item.children.map((child, i) =>
           isSection(child) ? (
             <p key={i}
@@ -61,7 +61,7 @@ export default function AdminLayout() {
       {/* Sidebar — dark */}
       <aside className="w-56 flex-shrink-0 bg-foreground flex flex-col">
         {/* Logo */}
-        <div className="h-14 border-b border-background/10">
+        <div className="h-14">
           <div className="flex w-full h-full px-4 items-center gap-2.5">
             <div className="w-7 h-7 rounded-lg bg-primary-500 flex items-center justify-center flex-shrink-0">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"
@@ -101,7 +101,7 @@ export default function AdminLayout() {
         </nav>
 
         {/* Logout */}
-        <div className="px-3 py-4 border-t border-background/10">
+        <div className="px-3 py-4">
           <button
             onClick={handleLogout}
             className="flex items-center gap-3 px-3 py-2.5 w-full rounded-lg text-sm font-medium text-background/50 hover:bg-background/10 hover:text-background transition-colors"
@@ -120,7 +120,7 @@ export default function AdminLayout() {
       {/* Main content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Topbar */}
-        <header className="h-14 bg-background border-b border-border flex items-center px-6 flex-shrink-0">
+        <header className="h-14 bg-background flex items-center px-6 flex-shrink-0">
           <span className="text-sm text-foreground/50">Управление контентом сайта</span>
         </header>
 

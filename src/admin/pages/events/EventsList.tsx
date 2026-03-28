@@ -22,9 +22,9 @@ export default function EventsList() {
 
   const statusLabel: Record<string, string> = { draft: 'Черновик', published: 'Опубликовано', archived: 'Архив' };
   const statusColor: Record<string, string> = {
-    draft: 'bg-yellow-50 text-yellow-700 border border-yellow-200',
-    published: 'bg-green-50 text-green-700 border border-green-200',
-    archived: 'bg-gray-50 text-gray-600 border border-gray-200',
+    draft: 'bg-yellow-50 text-yellow-700',
+    published: 'bg-green-50 text-green-700',
+    archived: 'bg-gray-50 text-gray-600',
   };
 
   return (
@@ -44,10 +44,10 @@ export default function EventsList() {
       ) : events.length === 0 ? (
         <div className="text-center py-16 text-foreground/50">Событий пока нет</div>
       ) : (
-        <div className="bg-background rounded-xl border border-border overflow-hidden">
+        <div className="bg-background rounded-xl overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-border bg-surface">
+              <tr className="bg-surface-elevated">
                 <th className="text-left px-4 py-3 font-medium text-foreground/60">Название</th>
                 <th className="text-left px-4 py-3 font-medium text-foreground/60">Дата</th>
                 <th className="text-left px-4 py-3 font-medium text-foreground/60">Место</th>
@@ -55,7 +55,7 @@ export default function EventsList() {
                 <th className="px-4 py-3" />
               </tr>
             </thead>
-            <tbody className="divide-y divide-border">
+            <tbody>
               {events.map(event => (
                 <tr key={event.id} className="hover:bg-surface transition-colors">
                   <td className="px-4 py-3 font-medium text-foreground">{event.title}</td>
@@ -71,13 +71,13 @@ export default function EventsList() {
                   <td className="px-4 py-3 flex justify-end gap-2">
                     <Link
                       to={`/admin/events/${event.slug}/edit`}
-                      className="px-3 py-1 text-xs font-medium text-foreground/60 border border-border rounded-md hover:bg-surface transition-colors"
+                      className="px-3 py-1 text-xs font-medium text-foreground/60 bg-surface rounded-md hover:bg-surface-elevated transition-colors"
                     >
                       Редактировать
                     </Link>
                     <button
                       onClick={() => handleDelete(event.slug)}
-                      className="px-3 py-1 text-xs font-medium text-red-600 border border-red-200 rounded-md hover:bg-red-50 transition-colors"
+                      className="px-3 py-1 text-xs font-medium text-red-600 bg-red-50 rounded-md hover:bg-red-100 transition-colors"
                     >
                       Удалить
                     </button>

@@ -25,8 +25,8 @@ export default function ArticlesList() {
 
   const statusLabel: Record<string, string> = { draft: 'Черновик', published: 'Опубликован' };
   const statusColor: Record<string, string> = {
-    draft: 'bg-yellow-50 text-yellow-700 border border-yellow-200',
-    published: 'bg-green-50 text-green-700 border border-green-200',
+    draft: 'bg-yellow-50 text-yellow-700',
+    published: 'bg-green-50 text-green-700',
   };
 
   return (
@@ -46,10 +46,10 @@ export default function ArticlesList() {
       ) : articles.length === 0 ? (
         <div className="text-center py-16 text-foreground/50">Статей пока нет</div>
       ) : (
-        <div className="bg-background rounded-xl border border-border overflow-hidden">
+        <div className="bg-background rounded-xl overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-border bg-surface">
+              <tr className="bg-surface-elevated">
                 <th className="text-left px-4 py-3 font-medium text-foreground/60">Заголовок</th>
                 <th className="text-left px-4 py-3 font-medium text-foreground/60">Категория</th>
                 <th className="text-left px-4 py-3 font-medium text-foreground/60">Автор</th>
@@ -57,7 +57,7 @@ export default function ArticlesList() {
                 <th className="px-4 py-3" />
               </tr>
             </thead>
-            <tbody className="divide-y divide-border">
+            <tbody>
               {articles.map(article => (
                 <tr key={article.id} className="hover:bg-surface transition-colors">
                   <td className="px-4 py-3 font-medium text-foreground">{article.title}</td>
@@ -71,13 +71,13 @@ export default function ArticlesList() {
                   <td className="px-4 py-3 flex justify-end gap-2">
                     <Link
                       to={`/admin/news/${article.slug}/edit`}
-                      className="px-3 py-1 text-xs font-medium text-foreground/60 border border-border rounded-md hover:bg-surface transition-colors"
+                      className="px-3 py-1 text-xs font-medium text-foreground/60 bg-surface rounded-md hover:bg-surface-elevated transition-colors"
                     >
                       Редактировать
                     </Link>
                     <button
                       onClick={() => handleDelete(article.slug)}
-                      className="px-3 py-1 text-xs font-medium text-red-600 border border-red-200 rounded-md hover:bg-red-50 transition-colors"
+                      className="px-3 py-1 text-xs font-medium text-red-600 bg-red-50 rounded-md hover:bg-red-100 transition-colors"
                     >
                       Удалить
                     </button>
