@@ -58,6 +58,12 @@ export interface Employee {
   is_active: boolean;
 }
 
+export interface TeamMember {
+  id: number;
+  employee: Employee;
+  order: number;
+}
+
 export interface PaginatedResponse<T> {
   count: number;
   next: string | null;

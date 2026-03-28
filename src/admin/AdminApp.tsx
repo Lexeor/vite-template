@@ -11,6 +11,7 @@ import PagesList from './pages/pages/PagesList';
 import PageForm from './pages/pages/PageForm';
 import StaffList from './pages/staff/StaffList';
 import StaffForm from './pages/staff/StaffForm';
+import TeamConfig from './pages/staff/TeamConfig';
 
 function ProtectedRoutes() {
   const { isAuthenticated } = useAuth();
@@ -36,6 +37,7 @@ export default function AdminApp() {
           <Route path="pages" element={<PagesList />} />
           <Route path="pages/new" element={<PageForm />} />
           <Route path="pages/:slug/edit" element={<PageForm />} />
+          <Route path="team" element={<TeamConfig />} />
           <Route path="staff" element={<StaffList />} />
           <Route path="staff/new" element={<StaffForm />} />
           <Route path="staff/:id/edit" element={<StaffForm />} />
