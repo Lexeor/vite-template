@@ -32,7 +32,7 @@
 }
 
 :root {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -88,6 +88,10 @@
 }
 
 @layer base {
+  html, body {
+    overscroll-behavior: none;
+  }
+
   input, textarea, select {
     outline: 0;
     font-family: inherit;

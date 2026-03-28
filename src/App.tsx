@@ -13,9 +13,9 @@ function HomePage() {
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground" style={{ paddingBottom: 'var(--footer-height, 0px)' }}>
+    <div className="relative min-h-screen bg-background text-foreground" style={{ paddingBottom: 'calc(var(--footer-height, 0px) - 1.5rem)' }}>
       <Header />
-      <div className="relative z-10">
+      <div className="relative z-10 rounded-b-2xl overflow-clip">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/team" element={<TeamPage />} />
