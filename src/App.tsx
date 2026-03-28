@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Header from '@/components/Header.tsx';
+import Footer from '@/components/Footer.tsx';
 import TeamPage from '@/pages/TeamPage.tsx';
 
 function HomePage() {
@@ -12,12 +13,15 @@ function HomePage() {
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen bg-background text-foreground" style={{ paddingBottom: 'var(--footer-height, 0px)' }}>
       <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/team" element={<TeamPage />} />
-      </Routes>
+      <div className="relative z-10">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/team" element={<TeamPage />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }
