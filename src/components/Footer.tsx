@@ -53,7 +53,8 @@ function MobileSection({ label, children }: { label: string; children: React.Rea
           <path d="M6 9l6 6 6-6" />
         </svg>
       </button>
-      <div className={`grid transition-all duration-300 ease-in-out ${open ? 'grid-rows-[1fr] pb-4' : 'grid-rows-[0fr]'}`}>
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${open ? 'grid-rows-[1fr] pb-4' : 'grid-rows-[0fr]'}`}>
         <div className="overflow-hidden">
           {children}
         </div>
@@ -85,15 +86,13 @@ export default function Footer() {
     <footer ref={ref} className="fixed bottom-0 left-0 right-0 z-0 bg-foreground">
 
       {/* Desktop layout */}
-      <div className="hidden md:block max-w-[1280px] mx-auto px-8 pt-12 pb-8">
+      <div className="hidden md:block max-w-[1280px] mx-auto px-8 pt-16 pb-8">
         <div className="grid grid-cols-4 gap-8">
 
           {/* Col 1 — Logo */}
-          <div className="flex flex-col">
-            <div className="w-14 h-14 border border-background/20 flex items-center justify-center mb-4">
-              <span className="text-background text-2xl font-bold">H</span>
-            </div>
-            <p className="text-xs text-background/30 mt-auto pt-6">© 2025 HFLABS</p>
+          <div className="flex flex-col items-start">
+            <img src="/images/logo-square.svg" alt="HFLABS Logo" className="w-14 h-14 mb-2" />
+            <p className="text-xs text-background/30">© 2025 HFLABS</p>
           </div>
 
           {/* Col 2 — Продукты */}
@@ -113,24 +112,33 @@ export default function Footer() {
             <div>
               <ColLabel>Контакты</ColLabel>
               <div className="space-y-2.5">
-                <a href="mailto:ask@hflabs.ru" className="block text-sm text-background/60 hover:text-background transition-colors">ask@hflabs.ru</a>
-                <a href="tel:+74959288641" className="block text-sm text-background/60 hover:text-background transition-colors">+7 495 928-86-41</a>
+                <a href="mailto:ask@hflabs.ru"
+                   className="block text-sm text-background/60 hover:text-background transition-colors">ask@hflabs.ru</a>
+                <a href="tel:+74959288641"
+                   className="block text-sm text-background/60 hover:text-background transition-colors">+7 495
+                  928-86-41</a>
               </div>
             </div>
             <div>
               <ColLabel>Мы в Telegram</ColLabel>
               <div className="space-y-2.5">
-                <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs Official</a>
-                <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs People</a>
-                <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs' Events</a>
+                <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs
+                  Official</a>
+                <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs
+                  People</a>
+                <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs'
+                  Events</a>
               </div>
             </div>
             <div>
               <ColLabel>Соц. сети</ColLabel>
               <div className="space-y-2.5">
-                <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">ВКонтакте</a>
-                <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">YouTube</a>
-                <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">Rutube</a>
+                <a href="#"
+                   className="block text-sm text-background/60 hover:text-background transition-colors">ВКонтакте</a>
+                <a href="#"
+                   className="block text-sm text-background/60 hover:text-background transition-colors">YouTube</a>
+                <a href="#"
+                   className="block text-sm text-background/60 hover:text-background transition-colors">Rutube</a>
               </div>
             </div>
           </div>
@@ -142,9 +150,7 @@ export default function Footer() {
       <div className="md:hidden px-4 pt-8">
         {/* Logo */}
         <div className="mb-6">
-          <div className="w-14 h-14 border border-background/20 flex items-center justify-center mb-3">
-            <span className="text-background text-2xl font-bold">H</span>
-          </div>
+          <img src="/images/logo-square.svg" alt="HFLABS Logo" className="w-14 h-14 mb-2" />
           <p className="text-xs text-background/30">© 2025 HFLABS</p>
         </div>
 
@@ -158,22 +164,28 @@ export default function Footer() {
 
         <MobileSection label="Контакты">
           <div className="space-y-2.5">
-            <a href="mailto:ask@hflabs.ru" className="block text-sm text-background/60 hover:text-background transition-colors">ask@hflabs.ru</a>
-            <a href="tel:+74959288641" className="block text-sm text-background/60 hover:text-background transition-colors">+7 495 928-86-41</a>
+            <a href="mailto:ask@hflabs.ru"
+               className="block text-sm text-background/60 hover:text-background transition-colors">ask@hflabs.ru</a>
+            <a href="tel:+74959288641"
+               className="block text-sm text-background/60 hover:text-background transition-colors">+7 495 928-86-41</a>
           </div>
         </MobileSection>
 
         <MobileSection label="Мы в Telegram">
           <div className="space-y-2.5">
-            <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs Official</a>
-            <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs People</a>
-            <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs' Events</a>
+            <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs
+              Official</a>
+            <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs
+              People</a>
+            <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">HFLabs'
+              Events</a>
           </div>
         </MobileSection>
 
         <MobileSection label="Соц. сети">
           <div className="space-y-2.5">
-            <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">ВКонтакте</a>
+            <a href="#"
+               className="block text-sm text-background/60 hover:text-background transition-colors">ВКонтакте</a>
             <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">YouTube</a>
             <a href="#" className="block text-sm text-background/60 hover:text-background transition-colors">Rutube</a>
           </div>
@@ -186,7 +198,7 @@ export default function Footer() {
           <a href="#" className="text-xs text-background/30 hover:text-background/60 transition-colors">
             Политика конфиденциальности
           </a>
-          <span className="text-xs text-background/30 text-right">Разработка сайта: Redis x SNP</span>
+          <span className="text-xs text-background/30 text-right">Разработка сайта: HFLabs</span>
         </div>
       </div>
     </footer>

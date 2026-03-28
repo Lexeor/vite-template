@@ -109,8 +109,28 @@ const DropdownItem: FC<{ item: Extract<NavItem, { children: NonNullable<unknown>
 };
 
 const Header: FC = () => {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      const delta = y - lastY;
+      if (Math.abs(delta) > 5) {
+        setVisible(delta < 0 || y < 10);
+        lastY = y;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-51 flex justify-center px-4 pt-4">
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-51 flex justify-center px-4 pt-4"
+      animate={{ y: visible ? 0 : '-100%' }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+    >
       <div
         className="flex w-full max-w-[1280px] items-center justify-between rounded-xl bg-surface px-4 py-3 shadow-header">
 
@@ -147,7 +167,7 @@ const Header: FC = () => {
         </div>
 
       </div>
-    </header>
+    </motion.header>
   );
 };
 
