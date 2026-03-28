@@ -1,10 +1,10 @@
 import Button from '@/components/ui/Button.tsx';
-import { AnimatePresence, motion } from 'motion/react';
+import { NAV_LINKS, type NavItem } from '@/data/nav';
 import { ChevronDownIcon, MenuIcon } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import { type FC, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
-import { NAV_LINKS, type NavItem } from '@/data/nav';
 
 const DropdownItem: FC<{ item: Extract<NavItem, { children: NonNullable<unknown> }> }> = ({ item }) => {
   const [open, setOpen] = useState(false);
@@ -42,7 +42,7 @@ const DropdownItem: FC<{ item: Extract<NavItem, { children: NonNullable<unknown>
     <>
       <button
         onClick={() => setOpen(o => !o)}
-        className={`flex items-center gap-1 text-sm! transition-colors duration-150 ${open ? 'text-primary-500' : 'text-foreground hover:text-primary-500'}`}
+        className={`flex items-center gap-1 text-md! transition-colors duration-150 ${open ? 'text-primary-500' : 'text-foreground hover:text-primary-500'}`}
       >
         {item.label}
         <ChevronDownIcon
@@ -82,7 +82,7 @@ const DropdownItem: FC<{ item: Extract<NavItem, { children: NonNullable<unknown>
                         key={child.href}
                         to={child.href}
                         onClick={close}
-                        className="px-5 py-4 rounded-xl border border-border text-sm text-foreground hover:border-primary-500/40 hover:text-primary-500 transition-colors duration-150"
+                        className="px-5 py-3 rounded-xl border border-border text-md text-foreground hover:bg-primary-500 hover:text-surface transition-colors duration-150"
                       >
                         {child.label}
                       </Link>
@@ -91,7 +91,7 @@ const DropdownItem: FC<{ item: Extract<NavItem, { children: NonNullable<unknown>
                         key={child.href}
                         href={child.href}
                         onClick={close}
-                        className="px-5 py-4 rounded-xl border border-border text-sm text-foreground hover:border-primary-500/40 hover:text-primary-500 transition-colors duration-150"
+                        className="px-5 py-3 rounded-xl border border-border text-md text-foreground hover:bg-primary-500 hover:text-surface transition-colors duration-150"
                       >
                         {child.label}
                       </a>
@@ -127,7 +127,7 @@ const Header: FC = () => {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-51 flex justify-center px-4 pt-4"
+      className="fixed top-0 left-0 right-0 z-51 flex justify-center px-4 sm:px-8 pt-4"
       animate={{ y: visible ? 0 : '-100%' }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
@@ -135,7 +135,7 @@ const Header: FC = () => {
         className="flex w-full max-w-[1280px] items-center justify-between rounded-xl bg-surface px-4 py-3 shadow-header">
 
         {/* Logo */}
-        <a href="#" className="flex flex-col leading-none">
+        <a href="#" className="flex flex-col leading-none outline-none">
           <img src="/images/logo.svg" alt="Logo" className="h-6 sm:h-7" />
         </a>
 
@@ -144,11 +144,19 @@ const Header: FC = () => {
           {NAV_LINKS.map(link =>
             link.children ? (
               <DropdownItem key={link.label} item={link} />
+            ) : link.href?.startsWith('/') ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-md text-foreground hover:text-primary-500 transition-colors duration-150"
+              >
+                {link.label}
+              </Link>
             ) : (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-foreground hover:text-primary-500 transition-colors duration-150"
+                className="text-md text-foreground hover:text-primary-500 transition-colors duration-150"
               >
                 {link.label}
               </a>

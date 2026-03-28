@@ -46,6 +46,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
 .container {
   position: relative;
   max-width: 100%;

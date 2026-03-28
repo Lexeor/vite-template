@@ -23,12 +23,12 @@ export default function SectionHeader({
         </p>
       )}
       {title && (
-        <h2 className="text-4xl sm:text-5xl -tracking-[0.02em] text-foreground leading-tight max-w-3xl">
+        <h2 className="text-4xl sm:text-5xl -tracking-[0.02em] text-foreground leading-[105%] max-w-3xl">
           {title}
         </h2>
       )}
       {subtitle && (
-        <p className="text-base text-foreground/50 max-w-xl whitespace-pre-line">
+        <p className="text-base text-foreground max-w-xl whitespace-pre-line">
           {subtitle}
         </p>
       )}

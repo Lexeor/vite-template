@@ -63,7 +63,7 @@ export default function TeamPage() {
     <div className="min-h-screen bg-background">
 
       {/* Hero */}
-      <section className="w-full pt-28 pb-6 px-0">
+      <section className="w-full pt-28 pb-0 px-0">
         <div className={CONTAINER}>
           <div className="bg-surface p-6 grid grid-cols-1 md:grid-cols-2 min-h-64 rounded-xl">
             <p className="text-5xl font-[500] mb-2">{hero.title || 'Команда'}</p>

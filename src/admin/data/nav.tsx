@@ -63,6 +63,7 @@ export const ADMIN_NAV: NavItem[] = [
       { label: 'Все страницы', to: '/admin/pages' },
       { section: 'Компания' },
       { label: 'Команда', to: '/admin/team' },
+      { label: 'Клиенты', to: '/admin/clients' },
     ],
   },
   {

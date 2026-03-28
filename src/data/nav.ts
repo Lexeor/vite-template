@@ -13,8 +13,8 @@ export const NAV_LINKS: NavItem[] = [
       { label: 'Карьера', href: '#career' },
       { label: 'Команда', href: '/team' },
       { label: 'Социальные проекты', href: '#social' },
-      { label: 'Клиенты', href: '#clients' },
+      { label: 'Клиенты', href: '/clients' },
     ],
   },
-  { label: 'Контакты', href: '#contact' },
+  { label: 'Контакты', href: '/contacts' },
 ];
