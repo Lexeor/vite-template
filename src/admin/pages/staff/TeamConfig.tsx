@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { apiFetch } from '../../api/client';
 import EmployeeSelector from '../../components/EmployeeSelector';
 import HeroBlockEditor from '../../components/HeroBlockEditor';
+import ItemsEditor from '../../components/ItemsEditor';
 import type { Employee, TeamMember } from '../../types';
 
 export default function TeamConfig() {
@@ -80,6 +81,11 @@ export default function TeamConfig() {
       </div>
 
       <HeroBlockEditor slug="team-about" withEyebrow titleLabel="Заголовок секции" bodyLabel="Подзаголовок" />
+
+      <div>
+        <h2 className="text-xl font-semibold text-foreground mb-4">Принципы</h2>
+        <ItemsEditor endpoint="/pages/principles/" addLabel="Добавить принцип" />
+      </div>
 
       <div>
         <div className="flex items-center justify-between mb-6">

@@ -1,7 +1,7 @@
 import type { Employee } from '../types';
 
 interface EmployeeSelectorProps {
-  label: string;
+  label?: string;
   selected: Employee[];
   available: Employee[];
   onSelectedChange: (employees: Employee[]) => void;
