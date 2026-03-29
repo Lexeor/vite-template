@@ -75,11 +75,11 @@ export default function CareerHero() {
 
       {/* Left — hardcoded content */}
       <div className="absolute top-10 left-10 z-10 max-w-[260px]">
-        <h1 className="text-[64px] font-[350] tracking-tight leading-[1.02] text-foreground">
+        <h1 className="text-[64px] font-[450] tracking-tight leading-[1.02] text-foreground">
           Работа<br />в HFLabs
         </h1>
-        <p className="mt-5 text-base text-foreground/60 leading-relaxed">
-          Делаем классные продукты<br />с классными людьми
+        <p className="mt-5 text-base text-foreground leading-relaxed mb-4">
+          Делаем классные продукты с классными людьми
         </p>
         <button
           onClick={() => document.getElementById('vacancies')?.scrollIntoView({ behavior: 'smooth' })}
@@ -121,7 +121,7 @@ export default function CareerHero() {
             <div className="w-7 h-0.5 bg-primary-500 mb-4" />
           )}
 
-          <p className="text-[17px] font-[350] text-foreground leading-snug">«{t.quote}»</p>
+          <p className="text-[17px] text-foreground leading-snug">«{t.quote}»</p>
           <div className="flex items-center justify-between mt-4">
             <span className="text-sm text-foreground/50">
               {t.name}{t.tenure ? ` / ${t.tenure}` : ''}
