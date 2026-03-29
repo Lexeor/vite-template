@@ -64,6 +64,7 @@ export const ADMIN_NAV: NavItem[] = [
       { section: 'Компания' },
       { label: 'Команда', to: '/admin/team' },
       { label: 'Клиенты', to: '/admin/clients' },
+      { label: 'Карьера', to: '/admin/career' },
     ],
   },
   {

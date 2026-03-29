@@ -10,7 +10,7 @@ export const NAV_LINKS: NavItem[] = [
     label: 'Компания',
     children: [
       { label: 'О компании', href: '#company' },
-      { label: 'Карьера', href: '#career' },
+      { label: 'Карьера', href: '/career' },
       { label: 'Команда', href: '/team' },
       { label: 'Социальные проекты', href: '#social' },
       { label: 'Клиенты', href: '/clients' },
