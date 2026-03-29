@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthProvider, useAuth } from './hooks/useAuth';
 import AdminLayout from './layouts/AdminLayout';
@@ -24,6 +25,16 @@ function ProtectedRoutes() {
 }
 
 export default function AdminApp() {
+  useEffect(() => {
+    const link = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+    if (link) link.href = '/favicon-admin.svg';
+    document.title = 'HFLabs Admin';
+    return () => {
+      if (link) link.href = '/favicon.svg';
+      document.title = 'HFLabs';
+    };
+  }, []);
+
   return (
     <AuthProvider>
       <Routes>

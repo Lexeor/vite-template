@@ -1,0 +1,6 @@
+<svg viewBox="0 0 75 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M49.7578 58.2773H45.3421V43.1729H29.6218V58.2773H25.3828V24.1523H29.6218V39.6297H45.3421V24.1523H49.7578V58.2773Z" fill="black"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M5.20304 75.1617L69.922 75.164V4.47303L5.20304 4.47067V75.1617ZM1 1L74.125 1.00235V79L1 78.9977V1Z" fill="black"/>
+  <rect x="0" y="83" width="75" height="14" rx="3" fill="#e61e1e"/>
+  <text x="37.5" y="93.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.5" font-weight="700" fill="white" letter-spacing="1.5">ADMIN</text>
+</svg>
